@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './RegisterForm.css';
-import icone1 from './imagens/file.png'; // Coloque a imagem icone1.png na pasta src/assets
-import icone2 from './imagens/image.png'; // Coloque a imagem icone2.png na pasta src/assets
+import icone1 from './imagens/file.png';
+import icone2 from './imagens/image.png';
 
 const RegisterForm = () => {
   const [formData, setFormData] = useState({ name: '', email: '', password: '', confirmPassword: '' });
@@ -12,18 +12,35 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className="register-form-container">
-      <div className="register-form">
+    <div className="register-form-wrapper">
+      <div className="register-form-container">
         <div className="form-left">
-          <img src={icone1} alt="Logo" className="form-logo" />
+          <div className="logo-container">
+            <img src={icone1} alt="Logo" className="form-logo" />
+            <span className="logo-text">QUEST INVEST</span>
+          </div>
           <h2>Cadastre-se</h2>
-          <p>Adicione seus dados:</p>
+          <p className="subtitle">Adicione seus dados:</p>
           <form>
-            <input type="text" name="name" placeholder="Nome" onChange={handleChange} />
-            <input type="email" name="email" placeholder="Email" onChange={handleChange} />
-            <input type="password" name="password" placeholder="Senha" onChange={handleChange} />
-            <input type="password" name="confirmPassword" placeholder="Digite a senha novamente" onChange={handleChange} />
-            <button type="submit">Confirma</button>
+            <div className="input-group">
+              <label htmlFor="name">Nome</label>
+              <input type="text" id="name" name="name" onChange={handleChange} />
+            </div>
+            <div className="input-group">
+              <label htmlFor="email">Email</label>
+              <input type="email" id="email" name="email" onChange={handleChange} />
+            </div>
+            <div className="input-group">
+              <label htmlFor="password">Senha</label>
+              <input type="password" id="password" name="password" onChange={handleChange} />
+            </div>
+            <div className="input-group">
+              <label htmlFor="confirmPassword">Digite a senha novamente</label>
+              <input type="password" id="confirmPassword" name="confirmPassword" onChange={handleChange} />
+            </div>
+            <div className="button-container">
+              <button type="submit">Confirma</button>
+            </div>
           </form>
         </div>
         <div className="form-right">

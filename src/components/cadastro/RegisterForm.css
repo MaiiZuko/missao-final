@@ -1,67 +1,115 @@
-.register-form-container {
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+body {
+    font-family: 'Share Tech Mono', monospace;
+  }
+  
+.register-form-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #1c3a36;
+    background-color: #12372A;
   }
   
-  .register-form {
+  .register-form-container {
     display: flex;
-    flex-direction: row;
-    background-color: #2e4a3d;
-    border-radius: 10px;
+    /*background-color: #436850; /* Fundo verde escuro */
+    background: linear-gradient(135deg, #738B81, #254539);
+    border-radius: 15px; /* Arredonda todos os lados */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    color: #ffffff;
-    width: 600px;
+    width: 1400px; /* Ajuste de largura */
+    height: 650px; /* Ajuste de altura */
   }
   
   .form-left {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    padding: 50px;
     width: 50%;
-    padding: 20px;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: -30px;
   }
   
   .form-logo {
-    width: 50px;
-    margin-bottom: 10px;
+    width: 75px;
+    margin-right: 10px;
+  }
+  
+  .logo-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
   }
   
   .form-left h2 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+    font-size: 3rem;
+    color: #ffffff;
+    font-family: 'Share Tech Mono', monospace;
+    text-align: left;
   }
   
-  .form-left p {
-    font-size: 1rem;
-    margin-bottom: 20px;
+  .form-left p.subtitle {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin: -25px 0 30px 0;
+    margin-left: 15%;
+    font-family: 'Share Tech Mono', monospace;
+    text-align: left;
   }
   
-  .form-left input {
-    margin-bottom: 10px;
-    padding: 10px;
+  .input-group {
+    position: relative;
+    margin-bottom: 25px;
+  }
+  
+  .input-group label {
+    font-size: 1.3rem;
+    color: #ffffff;
+    position: absolute;
+    top: -25px;
+    left: 10px;
+    padding: 0 5px;
     border-radius: 5px;
+  }
+  
+  
+  .input-group input {
+    padding: 15px;
+    border-radius: 20px;
     border: none;
     outline: none;
+    width: 90%;
+    font-size: 1.2rem;
+    color: #333;
+    background-color: #e8ebe9;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: flex-start;
     width: 100%;
   }
   
   .form-left button {
-    background-color: #1c704d;
-    color: #ffffff;
-    padding: 10px;
+    background-color: #12372A;
+    color: #e0e0e0;
+    padding: 12px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
-    transition: background-color 0.3s;
-    width: 100%;
+    font-size: 1.1rem;
+    font-family: 'Share Tech Mono', monospace;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
   }
   
   .form-left button:hover {
-    background-color: #15593b;
+    background-color: #12372A;
   }
   
   .form-right {
@@ -69,20 +117,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%;
-    padding: 20px;
+    background-color: #12372A; /* Efeito de janela */
+    border-radius: 15px; /* Arredonda todos os lados */
+    width: 35%;
+    padding: 30px;
+    margin-top: 27px;
+    height: 535px;
     text-align: center;
   }
   
   .form-right p {
-    font-size: 1rem;
+    font-size: 2.5rem;
+    color: #ffffff;
     margin-bottom: 20px;
   }
   
   .form-graphic {
-    width: 100px;
+    width: 350px;
     height: auto;
-    filter: invert(1); /* Aplica o efeito negativo */
+    filter: invert(1);
   }
-  
-  
