@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import './RegisterForm.css';
-import icone1 from './imagens/file.png';
-import icone2 from './imagens/image.png';
+import './Login.css';
+import icone1 from '../imagens/file.png';
+import icone2 from '../imagens/image.png';
 
 const RegisterForm = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', password: '', confirmPassword: '' });
+  const [formData, setFormData] = useState({ email: '', password: '' });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,13 +19,9 @@ const RegisterForm = () => {
             <img src={icone1} alt="Logo" className="form-logo" />
             <span className="logo-text">QUEST INVEST</span>
           </div>
-          <h2>Cadastre-se</h2>
-          <p className="subtitle">Adicione seus dados:</p>
+          <h2>BEM-VINDO!</h2>
+          <p className="subtitle">Entre com os dados da sua conta:</p>
           <form>
-            <div className="input-group">
-              <label htmlFor="name">Nome</label>
-              <input type="text" id="name" name="name" onChange={handleChange} />
-            </div>
             <div className="input-group">
               <label htmlFor="email">Email</label>
               <input type="email" id="email" name="email" onChange={handleChange} />
@@ -34,12 +30,9 @@ const RegisterForm = () => {
               <label htmlFor="password">Senha</label>
               <input type="password" id="password" name="password" onChange={handleChange} />
             </div>
-            <div className="input-group">
-              <label htmlFor="confirmPassword">Digite a senha novamente</label>
-              <input type="password" id="confirmPassword" name="confirmPassword" onChange={handleChange} />
-            </div>
             <div className="button-container">
-              <button type="submit">Confirma</button>
+              <button type="submit">Login</button>
+              <button type="button" style={{ marginLeft: '10px' }}>Cadastro</button>
             </div>
           </form>
         </div>
