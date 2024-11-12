@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+body {
+    font-family: 'Share Tech Mono', monospace;
+}
+  
+  .home {
+    text-align: center;
+  }
+  
+  .header {
+    display: flex; /* Usa flexbox para alinhamento */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    justify-content: space-between; /* Deixa espaço entre o logo e o canto direito */
+    background-color: #12372A; /* Cor de fundo da barra verde */
+    padding: 10px 20px; /* Define padding para controle de altura e espaçamento */
+    color: white; /* Cor do texto */
+    height: 60px; /* Ajusta a altura da barra verde */
+    position: relative; /* Necessário para centralizar o título */
+  }
+  
+  .logo {
+    width: 60px; /* Define a largura do ícone para alinhamento */
+  }
+  .iconUser {
+    width: 50px; /* Define a largura do ícone para alinhamento */
+    align-items: right; /* Centraliza o conteúdo verticalmente */
+ 
+
+  }
+  /* Estilo para centralizar o título */
+  .title {
+    position: absolute; /* Posiciona o título no centro absoluto */
+    left: 50%; /* Move para o centro horizontal */
+    transform: translateX(-50%); /* Centraliza o título */
+    font-size: 1.8rem; /* Tamanho da fonte do título */
+    font-weight: bold; /* Negrito para destacar o título */
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 30px;
+  }
+  
+  .welcome-section {
+    background-color: #e3e8e1;
+    border-radius: 10px 0 0 10px;
+    margin-top: 20px;
+    padding: 20px;
+    width: 80%;
+    height: 160px;
+    text-align: center;
+    border-right: 1px solid #000;
+  }
+  
+  .welcome-section hr {
+    margin: 10px 0;
+  }
+  
+  .finance-info {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+  }
+  
+  .finance-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    border-radius: 0px 10px 10px 0px;
+    width: 150px;
+    height: 90px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .finance-box.green {
+    background-color: #a3e4a3;
+    color: #1a651a;
+    border-radius: 10px;
+  }
+  
+  .finance-box.brown {
+    background-color: #d9b38c;
+    color: #6b4226;
+    border-radius: 10px;
+
+  }
+  
+  .quick-access {
+    background-color: #e3e8e1;
+    border-radius: 0px 10px 10px 0px;
+    padding: 20px;
+    width: 80%;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .quick-access hr {
+    margin: 10px 0;
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+  }
+  
+  .action-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .action-button img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+  }
+  
+  .action-button span {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  

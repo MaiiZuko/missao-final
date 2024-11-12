@@ -3,23 +3,6 @@ body {
     font-family: 'Share Tech Mono', monospace;
 }
   
-.register-form-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #12372A;
-}
-  
-.register-form-container {
-    display: flex;
-    background: linear-gradient(135deg, #738B81, #254539);
-    border-radius: 15px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    width: 1400px;
-    height: 650px;
-}
-  
 .form-left {
     display: flex;
     flex-direction: column;
@@ -50,35 +33,37 @@ body {
     text-align: left;
 }
   
-.form-left p.subtitle {
+.form-left p.sub {
     font-size: 1.5rem;
     color: #ffffff;
-    margin: -25px 0 75px 0;
-    margin-left: 16;
+    margin: -2px 0 65px 0;
     text-align: left;
 }
   
-.input-group {
+.input-a {
     position: relative;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 }
   
-.input-group label {
+.input-a label {
     font-size: 1.3rem;
     color: #ffffff;
     position: absolute;
     top: -25px;
-    left: 10px;
+    left: 0;
     padding: 0 5px;
     border-radius: 5px;
+    margin: -2px 0 75px 0;
+
 }
   
-.input-group input {
-    padding: 15px;
-    border-radius: 20px;
+.input-a input {
+    padding: 10px;
+    margin: -2px 0 55px 0;
+    border-radius: 15px;
     border: none;
     outline: none;
-    width: 90%;
+    width: 100%;
     font-size: 1.2rem;
     color: #333;
     background-color: #e8ebe9;
@@ -89,15 +74,16 @@ body {
     display: flex;
     justify-content: flex-start;
     width: 100%;
-    gap: 10px; /* Espaçamento entre os botões */
+    gap: 20px; /* Espaçamento entre os botões */
 }
   
 .form-left button {
     background-color: #12372A;
     color: #e0e0e0;
-    padding: 12px 20px;
+    padding: 12px 40px;
     border: none;
     border-radius: 20px;
+    margin-top: -9px;
     cursor: pointer;
     font-size: 1.1rem;
     transition: background-color 0.3s, box-shadow 0.3s;

@@ -20,13 +20,13 @@ const RegisterForm = () => {
             <span className="logo-text">QUEST INVEST</span>
           </div>
           <h2>BEM-VINDO!</h2>
-          <p className="subtitle">Entre com os dados da sua conta:</p>
+          <p className="sub">Entre com os dados da sua conta:</p>
           <form>
-            <div className="input-group">
+            <div className="input-a">
               <label htmlFor="email">Email</label>
               <input type="email" id="email" name="email" onChange={handleChange} />
             </div>
-            <div className="input-group">
+            <div className="input-a">
               <label htmlFor="password">Senha</label>
               <input type="password" id="password" name="password" onChange={handleChange} />
             </div>
