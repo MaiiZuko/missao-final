@@ -46,7 +46,7 @@ body {
   background-color: #e3e8e1;
   border-radius: 15px;
   max-width: 800px;
-  margin: 40px auto;
+  margin: 0px auto;
 }
 
 .icon-selection-content h2 {
@@ -56,7 +56,7 @@ body {
 }
 
 .icon-selection-content hr {
-  margin: 10px auto 30px;
+  margin: 10px auto -10px;
   width: 60%;
   border: none;
   border-top: 1px solid #ffffff;
@@ -72,7 +72,7 @@ body {
 
 .icon-option {
   width: 125px;
-  height: 125px;
+  height: 145px;
   cursor: pointer;
   border: 2px solid transparent;
   border-radius: 8px;

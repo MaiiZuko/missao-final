@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import './Login.css';
 import icone1 from '../imagens/file.png';
 import icone2 from '../imagens/image.png';
+import { useNavigate } from 'react-router-dom';
 
 const RegisterForm = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,7 +34,13 @@ const RegisterForm = () => {
             </div>
             <div className="button-container">
               <button type="submit">Login</button>
-              <button type="button" style={{ marginLeft: '10px' }}>Cadastro</button>
+              <button
+                  type="button"
+                  style={{ marginLeft: '10px' }}
+                  onClick={() => navigate('/cadastro')}
+              >
+                  Cadastro
+              </button>
             </div>
           </form>
         </div>

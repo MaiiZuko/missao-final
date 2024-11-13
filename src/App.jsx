@@ -13,7 +13,7 @@ function App() {
       <Router>
         <div className="App">
           <Routes>
-            <Route path="/login" element={<Login />} />
+            <Route path="/" element={<Login />} />
             <Route path="/cadastro" element={<RegisterForm />} />
             <Route path="/home" element={<Home />} />
             <Route path="/personalizar" element={<UserProfile />} />

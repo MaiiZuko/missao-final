@@ -1,7 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './UserProfile.css';
-import icone1 from '../imagens/file.png';
+import icone1 from '../imagens/user.png'; // Ícone para o botão de usuário no header
+import icone from '../imagens/icone.png'; // Ícone padrão para imagem de perfil
+import logo from '../imagens/file.png';
 import { useUser } from '../page-icones/UserContext'; // Importe o contexto
 
 const UserProfile = () => {
@@ -12,8 +14,8 @@ const UserProfile = () => {
     <div className="user-profile">
       {/* Cabeçalho */}
       <header className="header">
-      <img 
-          src={icone1} 
+        <img 
+          src={logo} 
           alt="Logo" 
           className="logo" 
           onClick={() => navigate('/home')} // Redireciona para /home ao clicar
@@ -21,7 +23,7 @@ const UserProfile = () => {
         />
         <h1 className="title">Perfil do Usuário</h1>
         <img 
-          src={userIcon || icone1} // Usa o ícone do usuário ou um ícone padrão
+          src={userIcon || icone1} // Exibe o ícone do usuário atualizado ou o ícone padrão do header
           alt="User" 
           className="iconUser" 
           onClick={() => navigate('/personalizar')}
@@ -33,7 +35,7 @@ const UserProfile = () => {
       <div className="profile-content">
         <div className="profile-picture-section">
           <div className="profile-picture">
-            <img src={userIcon || icone1} alt="Foto do Usuário" className="user-icon" />
+            <img src={userIcon || icone} alt="Foto do Usuário" className="user-icon" />
           </div>
           <button 
             className="add-photo-button" 

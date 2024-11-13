@@ -1,26 +1,18 @@
-import React, { useState, useEffect  } from 'react';
+import React, { useState  } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Home.css';
-import { useUser } from '../page-icones/UserContext'; // Importa o contexto
 import icone1 from '../imagens/file.png';
 import icone2 from '../imagens/user.png'
 import iconeNegativo from '../imagens/negativo.png';
 import iconePositivo from '../imagens/positivo.png';
 import iconeFoguete from '../imagens/foguete.png';
+import { useUser } from '../page-icones/UserContext'; // Importe o contexto
 
 const Home = () => {
-  const [userIcon, setUserIcon] = useState(icone2); // Usa icone2 como o ícone padrão
   const [modalVisible, setModalVisible] = useState(false);
   const [modalType, setModalType] = useState('');
   const navigate = useNavigate();
-
-  useEffect(() => {
-    // Verifica se há um ícone salvo no localStorage
-    const savedIcon = localStorage.getItem('userIcon');
-    if (savedIcon) {
-      setUserIcon(savedIcon);
-    }
-  }, []);
+  const { userIcon } = useUser(); // Obtenha o ícone do usuário do contexto
 
   const openModal = (type) => {
     setModalType(type);
@@ -39,7 +31,7 @@ const Home = () => {
         <img src={icone1} alt="Logo" className="logo" />
         <h1 className="title">QUEST INVEST</h1>
         <img 
-          src={userIcon} // Exibe o ícone do usuário armazenado no contexto
+          src={userIcon || icone2} // Exibe o ícone do usuário atualizado ou o ícone padrão do header
           alt="User" 
           className="iconUser" 
           onClick={() => navigate('/personalizar')}
