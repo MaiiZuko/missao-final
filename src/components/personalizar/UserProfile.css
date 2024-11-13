@@ -68,9 +68,9 @@ body {
 .user-icon {
   width: 250px; /* Ajuste a largura conforme necessário */
   height: 270px; /* Ajuste a altura conforme necessário */
-  margin-top: 70px;
+  margin-top: 60px;
   margin-left: 150px;
-  background-color: #9a9a9a;
+  background-color: #f4efef;
   display: flex; /* Centraliza o ícone no contêiner */
   align-items: center; /* Centraliza verticalmente */
   justify-content: center; /* Centraliza horizontalmente */
@@ -86,7 +86,7 @@ body {
   height: 30px;
   font-size: 1.5rem;
   color: #333;
-  margin-top: 95px;
+  margin-top: 85px;
   margin-left: 150px;
   cursor: pointer;
 }
