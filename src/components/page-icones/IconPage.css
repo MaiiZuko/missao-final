@@ -1,0 +1,100 @@
+/* Importa a fonte */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+body {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.icon-page {
+  text-align: center;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #12372A;
+  padding: 10px 20px;
+  color: white;
+  height: 60px;
+  position: relative;
+}
+
+.logo {
+  width: 60px;
+}
+
+.iconUser {
+  width: 50px;
+}
+
+.title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Conteúdo Principal */
+.icon-selection-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  background-color: #e3e8e1;
+  border-radius: 15px;
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+.icon-selection-content h2 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.icon-selection-content hr {
+  margin: 10px auto 30px;
+  width: 60%;
+  border: none;
+  border-top: 1px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.icon-selection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.icon-option {
+  width: 125px;
+  height: 125px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: border 0.3s ease;
+}
+
+.icon-option:hover {
+  border-color: #12372A;
+}
+
+.save-button {
+  background-color: #12372A;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 200px;
+  margin-top: 20px;
+}
+
+.save-button:hover {
+  background-color: #0d2b22;
+}

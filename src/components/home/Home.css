@@ -124,4 +124,88 @@ body {
     font-size: 1.2rem;
     color: #333;
   }
-  
+  /* Fundo translúcido para o modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(18, 55, 42, 0.8); /* Verde translúcido */
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Estilo do conteúdo do modal */
+.modal-content {
+  background-color: #f8f8f8;
+  padding: 20px;
+  width: 550px;
+  margin-block-end: 15px;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  font-family: 'Share Tech Mono', monospace; /* Fonte desejada */
+  width: 98%;
+  padding: 7px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.form-row .form-group {
+  width: 48%; /* Divide os elementos na mesma linha */
+}
+
+.form-group.full-width {
+  width: 51%; /* Campo "Categoria" ocupa a largura completa */
+}
+
+.confirm-button {
+  background-color: #129e3f; /* Verde para o botão de confirmação */
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto 0; /* Centraliza o botão */
+}
+
+.confirm-button:hover {
+  background-color: #127b33; /* Tom mais escuro ao passar o mouse */
+}

@@ -1,0 +1,152 @@
+/* Importa a fonte */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+body {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.user-profile {
+  text-align: center;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #12372A;
+  padding: 10px 20px;
+  color: white;
+  height: 60px;
+  position: relative;
+}
+
+.logo {
+  width: 60px;
+}
+
+.iconUser {
+  width: 50px;
+}
+
+.title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Conteúdo Principal */
+.profile-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background-color: #e3e8e1;
+  border-radius: 15px;
+  max-width: 1300px;
+  height: 500px;
+  margin: 40px auto;
+}
+
+.profile-picture-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 40px;
+}
+
+.profile-picture {
+  width: 300px; /* Aumenta o tamanho do container da imagem */
+  height: 300px; /* Aumenta o tamanho do container da imagem */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-icon {
+  width: 150px; /* Ajuste a largura conforme necessário */
+  height: 150px; /* Ajuste a altura conforme necessário */
+  margin-top: 70px;
+  margin-left: 150px;
+  background-color: #9a9a9a;
+  display: flex; /* Centraliza o ícone no contêiner */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  border-radius: 10px; /* Define bordas arredondadas se desejado */
+}
+
+
+.add-photo-button {
+  background-color: #ccc;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 1.5rem;
+  color: #333;
+  margin-top: 95px;
+  margin-left: 150px;
+  cursor: pointer;
+}
+
+.profile-info-section {
+    text-align: left; /* Centraliza o conteúdo dentro da seção */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+  }
+
+  .profile-form {
+    width: 100%; /* Define a largura total do formulário */
+    max-width: 500px; /* Define a largura máxima do formulário */
+  }
+
+.profile-info-section h2 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 10px;
+  
+}
+
+.profile-info-section hr {
+    margin: 10px auto 30px; /* Ajusta o espaçamento e centraliza o HR */
+    width: 60%; /* Reduz a largura para centralizar */
+    border: none;
+    border-top: 1px solid #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra preta sutil */
+  }
+
+.profile-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem; /* Diminui o tamanho da fonte dos labels */
+  color: #333;
+  margin-bottom: 10px; /* Ajusta o espaçamento entre os labels e os inputs */
+}
+
+.profile-form input {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.save-button {
+  background-color: #12372A;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.save-button:hover {
+  background-color: #0d2b22;
+}
