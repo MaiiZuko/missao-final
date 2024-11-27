@@ -9,7 +9,6 @@ body {
   text-align: center;
 }
 
-/* Header */
 .header {
   display: flex;
   align-items: center;
@@ -37,7 +36,6 @@ body {
   font-weight: bold;
 }
 
-/* Conteúdo Principal */
 .profile-content {
   display: flex;
   align-items: center;
@@ -58,23 +56,23 @@ body {
 }
 
 .profile-picture {
-  width: 300px; /* Aumenta o tamanho do container da imagem */
-  height: 300px; /* Aumenta o tamanho do container da imagem */
+  width: 300px; 
+  height: 300px; 
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .user-icon {
-  width: 250px; /* Ajuste a largura conforme necessário */
-  height: 270px; /* Ajuste a altura conforme necessário */
+  width: 250px; 
+  height: 270px; 
   margin-top: 60px;
   margin-left: 150px;
   background-color: #f4efef;
-  display: flex; /* Centraliza o ícone no contêiner */
-  align-items: center; /* Centraliza verticalmente */
-  justify-content: center; /* Centraliza horizontalmente */
-  border-radius: 10px; /* Define bordas arredondadas se desejado */
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  border-radius: 10px;
 }
 
 
@@ -92,16 +90,16 @@ body {
 }
 
 .profile-info-section {
-    text-align: left; /* Centraliza o conteúdo dentro da seção */
+    text-align: left; 
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center;
   }
 
   .profile-form {
-    width: 100%; /* Define a largura total do formulário */
-    max-width: 500px; /* Define a largura máxima do formulário */
+    width: 100%;
+    max-width: 500px; 
   }
 
 .profile-info-section h2 {
@@ -112,19 +110,19 @@ body {
 }
 
 .profile-info-section hr {
-    margin: 10px auto 30px; /* Ajusta o espaçamento e centraliza o HR */
-    width: 60%; /* Reduz a largura para centralizar */
+    margin: 10px auto 30px; 
+    width: 60%; 
     border: none;
     border-top: 1px solid #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra preta sutil */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
   }
 
 .profile-form label {
   display: flex;
   flex-direction: column;
-  font-size: 0.9rem; /* Diminui o tamanho da fonte dos labels */
+  font-size: 0.9rem; 
   color: #333;
-  margin-bottom: 10px; /* Ajusta o espaçamento entre os labels e os inputs */
+  margin-bottom: 10px; 
 }
 
 .profile-form input {

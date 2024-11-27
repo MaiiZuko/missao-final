@@ -1,29 +1,28 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './UserProfile.css';
-import icone1 from '../imagens/user.png'; // Ícone para o botão de usuário no header
-import icone from '../imagens/icone.png'; // Ícone padrão para imagem de perfil
+import icone1 from '../imagens/user.png';
+import icone from '../imagens/icone.png';
 import logo from '../imagens/file.png';
-import { useUser } from '../page-icones/UserContext'; // Importe o contexto
+import { useUser } from '../page-icones/UserContext'; 
 
 const UserProfile = () => {
   const navigate = useNavigate();
-  const { userIcon } = useUser(); // Obtenha o ícone do usuário do contexto
+  const { userIcon } = useUser(); // pega o ícone do usuário
 
   return (
     <div className="user-profile">
-      {/* Cabeçalho */}
       <header className="header">
         <img 
           src={logo} 
           alt="Logo" 
           className="logo" 
-          onClick={() => navigate('/home')} // Redireciona para /home ao clicar
-          style={{ cursor: 'pointer' }} // Adiciona o cursor de ponteiro
+          onClick={() => navigate('/home')} 
+          style={{ cursor: 'pointer' }}
         />
         <h1 className="title">Perfil do Usuário</h1>
         <img 
-          src={userIcon || icone1} // Exibe o ícone do usuário atualizado ou o ícone padrão do header
+          src={userIcon || icone1} // exibe o ícone do usuário atualizado ou o ícone padrão do header se n houver icone
           alt="User" 
           className="iconUser" 
           onClick={() => navigate('/personalizar')}
@@ -31,7 +30,6 @@ const UserProfile = () => {
         />
       </header>
 
-      {/* Conteúdo Principal */}
       <div className="profile-content">
         <div className="profile-picture-section">
           <div className="profile-picture">

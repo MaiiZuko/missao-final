@@ -21,11 +21,11 @@ const Home = () => {
     data: '',
     categoria: ''
   });
-  const [despesas, setDespesas] = useState([]); // Lista de despesas
-  const [totalDespesa, setTotalDespesa] = useState(0); // Valor total de despesas
-  const [economias, setEconomias] = useState([]); // Lista de economias
-  const [totalEconomia, setTotalEconomia] = useState(0); // Valor total de economias
-  const [metas, setMetas] = useState([]); // Lista de metas
+  const [despesas, setDespesas] = useState([]);
+  const [totalDespesa, setTotalDespesa] = useState(0);
+  const [economias, setEconomias] = useState([]);
+  const [totalEconomia, setTotalEconomia] = useState(0);
+  const [metas, setMetas] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const navigate = useNavigate();
@@ -97,7 +97,6 @@ const Home = () => {
     closeModal();
   };
 
-  // Prepara os dados para o gráfico de despesas
   const categorias = {
     '1': 'Saúde',
     '2': 'Moradia',
@@ -121,47 +120,46 @@ const Home = () => {
       {
         data: Object.values(despesasPorCategoria),
         backgroundColor: [
-          '#d9f2d9', // Verde muito claro
-        '#a3e4a3', // Verde claro
-        '#71d171', // Verde médio
-        '#4ec94e', // Verde vibrante
-        '#36b336', // Verde escuro
-        '#2a9c2a', // Verde mais escuro
-        '#ffc107', // Amarelo (destaque)
-        '#006400'  // Verde muito escuro
-      ],
-      hoverBackgroundColor: [
-        '#c8ebc8', // Tom mais claro ao passar o mouse
-        '#8cd48c',
-        '#66c166',
-        '#4eb74e',
-        '#33a033',
-        '#289128',
-        '#ffcd38', // Amarelo ao passar o mouse
-        '#004f00'
+          '#d9f2d9',
+          '#a3e4a3',
+          '#71d171',
+          '#4ec94e',
+          '#36b336',
+          '#2a9c2a',
+          '#ffc107',
+          '#006400'
+        ],
+        hoverBackgroundColor: [
+          '#c8ebc8',
+          '#8cd48c',
+          '#66c166',
+          '#4eb74e',
+          '#33a033',
+          '#289128',
+          '#ffcd38',
+          '#004f00'
         ]
       }
     ]
   };
+
   const optionsGrafico = {
     plugins: {
       legend: {
-        position: 'right', // Posiciona a legenda ao lado direito
+        position: 'right',
         labels: {
-          boxWidth: 15, // Tamanho das caixas de cor
+          boxWidth: 15,
           font: {
-            size: 12, // Tamanho da fonte da legenda
+            size: 12,
           },
         },
       },
     },
-    maintainAspectRatio: false, // Permite ajuste flexível
+    maintainAspectRatio: false,
   };
-  
-  
+
   return (
     <div className="home">
-      {/* Cabeçalho */}
       <header className="header">
         <img src={icone1} alt="Logo" className="logo" />
         <h1 className="title">QUEST INVEST</h1>
@@ -174,7 +172,6 @@ const Home = () => {
         />
       </header>
 
-      {/* Conteúdo Principal */}
       <div className="content">
         <div className="welcome-section">
           <p>Boa noite <strong>*usuário*</strong>!</p>
@@ -221,7 +218,7 @@ const Home = () => {
                   type="checkbox"
                   id={`meta-${index}`}
                   name={`meta-${index}`}
-                  style={{ marginRight: '10px' }} // Espaçamento entre o checkbox e o texto
+                  style={{ marginRight: '10px' }}
                 />
                 <label htmlFor={`meta-${index}`}>
                   {meta.data} - {meta.descricao} - R$ {meta.valor ? meta.valor.toFixed(2) : '0.00'}
@@ -239,18 +236,16 @@ const Home = () => {
               </li>
             ))}
           </ul>
-          </div>
+        </div>
         <div className="grafico-despesas">
           <h2>Gráfico de Despesas</h2>
           <Pie data={dataGrafico} options={optionsGrafico} />
         </div>
       </div>
 
-      {/* Mensagens de erro e sucesso */}
       {errorMessage && <div className="error-message">{errorMessage}</div>}
       {successMessage && <div className="success-message">{successMessage}</div>}
 
-      {/* Modal Popup */}
       {modalVisible && (
         <div className="modal-overlay">
           <div className="modal-content">

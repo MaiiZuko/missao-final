@@ -17,7 +17,7 @@ const RegisterForm = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Impede o comportamento padrão de envio do formulário
+    e.preventDefault(); // impede o comportamento padrão de envio do formulário
 
     if (formData.password !== formData.confirmPassword) {
       alert('As senhas não correspondem!');
@@ -42,10 +42,9 @@ const RegisterForm = () => {
       const result = await response.json();
 
       if (response.ok) {
-        alert(result.message); // Exibe a mensagem de sucesso
-        // Você pode redirecionar ou limpar o formulário aqui
+        alert(result.message); // sucesso
       } else {
-        alert(result.error); // Exibe a mensagem de erro
+        alert(result.error); // erro
       }
     } catch (error) {
       console.error('Erro ao cadastrar usuário:', error);

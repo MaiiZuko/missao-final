@@ -13,12 +13,11 @@ body {
   
   .register-form-container {
     display: flex;
-    /*background-color: #436850; /* Fundo verde escuro */
     background: linear-gradient(135deg, #738B81, #254539);
-    border-radius: 15px; /* Arredonda todos os lados */
+    border-radius: 15px; 
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    width: 1400px; /* Ajuste de largura */
-    height: 650px; /* Ajuste de altura */
+    width: 1400px;
+    height: 650px; 
   }
   
   .form-left {
@@ -120,8 +119,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #12372A; /* Efeito de janela */
-    border-radius: 15px; /* Arredonda todos os lados */
+    background-color: #12372A; 
+    border-radius: 15px; 
     width: 35%;
     padding: 30px;
     margin-top: 27px;

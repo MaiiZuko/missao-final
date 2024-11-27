@@ -1,7 +1,7 @@
 const { Client } = require('pg');
 const dotenv = require('dotenv');
 
-dotenv.config(); // Carregar variáveis de ambiente
+dotenv.config(); // carregar variáveis de ambiente
 
 const client = new Client({
   user: process.env.DB_USER,

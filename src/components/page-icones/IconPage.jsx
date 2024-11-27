@@ -21,7 +21,7 @@ const IconPage = () => {
   };
 
   const handleSaveClick = () => {
-    setUserIcon(selectedIcon); // Salva o ícone selecionado no contexto do usuário
+    setUserIcon(selectedIcon); // salva o ícone selecionado do usuário
     navigate('/personalizar');
   };
 
