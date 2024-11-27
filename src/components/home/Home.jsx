@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; 
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Home.css';
 import icone1 from '../imagens/file.png';
@@ -6,7 +6,11 @@ import icone2 from '../imagens/user.png';
 import iconeNegativo from '../imagens/negativo.png';
 import iconePositivo from '../imagens/positivo.png';
 import iconeFoguete from '../imagens/foguete.png';
+import { Pie } from 'react-chartjs-2';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { useUser } from '../page-icones/UserContext';
+
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Home = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -17,6 +21,11 @@ const Home = () => {
     data: '',
     categoria: ''
   });
+  const [despesas, setDespesas] = useState([]); // Lista de despesas
+  const [totalDespesa, setTotalDespesa] = useState(0); // Valor total de despesas
+  const [economias, setEconomias] = useState([]); // Lista de economias
+  const [totalEconomia, setTotalEconomia] = useState(0); // Valor total de economias
+  const [metas, setMetas] = useState([]); // Lista de metas
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const navigate = useNavigate();
@@ -50,48 +59,106 @@ const Home = () => {
     }));
   };
 
-  // Função de envio da despesa (exemplo com fetch)
-  const enviarDespesa = async (formData) => {
-    if (!formData.descricao || !formData.valor || !formData.data || !formData.categoria) {
-      setErrorMessage('Todos os campos devem ser preenchidos.');
-      return;
-    }
-
-    // Exibe os dados que estão sendo enviados
-    console.log('Dados a serem enviados:', formData);
-
-    try {
-      const response = await fetch('http://localhost:3001/api/despesas', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData), // Dados enviados no corpo da requisição
-      });
-
-      // Verifica a resposta do servidor
-      const responseData = await response.json();
-      console.log('Resposta do servidor:', responseData);
-
-      if (response.ok) {
-        setSuccessMessage('Despesa cadastrada com sucesso!');
-        setErrorMessage('');
-      } else {
-        setErrorMessage(responseData.error || 'Erro ao cadastrar despesa.');
-      }
-    } catch (error) {
-      setErrorMessage('Erro de comunicação com o servidor.');
-      console.error('Erro de comunicação com o servidor:', error);
-    }
-  };
-
   const handleSubmit = () => {
     if (modalType === 'despesa') {
-      enviarDespesa(formData);
+      const novaDespesa = {
+        descricao: formData.descricao,
+        valor: parseFloat(formData.valor),
+        data: formData.data,
+        categoria: formData.categoria
+      };
+      setDespesas((prevDespesas) => [...prevDespesas, novaDespesa]);
+      setTotalDespesa((prevTotal) => prevTotal + novaDespesa.valor);
+      setSuccessMessage('Despesa adicionada com sucesso!');
     }
+
+    if (modalType === 'economia') {
+      const novaEconomia = {
+        descricao: formData.descricao,
+        valor: parseFloat(formData.valor),
+        data: formData.data,
+        categoria: formData.categoria
+      };
+      setEconomias((prevEconomias) => [...prevEconomias, novaEconomia]);
+      setTotalEconomia((prevTotal) => prevTotal + novaEconomia.valor);
+      setSuccessMessage('Economia adicionada com sucesso!');
+    }
+
+    if (modalType === 'metas') {
+      const novaMeta = {
+        descricao: formData.descricao,
+        data: formData.data,
+        valor: parseFloat(formData.valor),
+      };
+      setMetas((prevMetas) => [...prevMetas, novaMeta]);
+      setSuccessMessage('Meta adicionada com sucesso!');
+    }
+
     closeModal();
   };
 
+  // Prepara os dados para o gráfico de despesas
+  const categorias = {
+    '1': 'Saúde',
+    '2': 'Moradia',
+    '3': 'Vestuário',
+    '4': 'Serviços',
+    '5': 'Impostos',
+    '6': 'Manutenção do veículo',
+    '7': 'Doações',
+    '8': 'Outros'
+  };
+
+  const despesasPorCategoria = despesas.reduce((acc, despesa) => {
+    const categoria = categorias[despesa.categoria] || 'Outros';
+    acc[categoria] = (acc[categoria] || 0) + despesa.valor;
+    return acc;
+  }, {});
+
+  const dataGrafico = {
+    labels: Object.keys(despesasPorCategoria),
+    datasets: [
+      {
+        data: Object.values(despesasPorCategoria),
+        backgroundColor: [
+          '#d9f2d9', // Verde muito claro
+        '#a3e4a3', // Verde claro
+        '#71d171', // Verde médio
+        '#4ec94e', // Verde vibrante
+        '#36b336', // Verde escuro
+        '#2a9c2a', // Verde mais escuro
+        '#ffc107', // Amarelo (destaque)
+        '#006400'  // Verde muito escuro
+      ],
+      hoverBackgroundColor: [
+        '#c8ebc8', // Tom mais claro ao passar o mouse
+        '#8cd48c',
+        '#66c166',
+        '#4eb74e',
+        '#33a033',
+        '#289128',
+        '#ffcd38', // Amarelo ao passar o mouse
+        '#004f00'
+        ]
+      }
+    ]
+  };
+  const optionsGrafico = {
+    plugins: {
+      legend: {
+        position: 'right', // Posiciona a legenda ao lado direito
+        labels: {
+          boxWidth: 15, // Tamanho das caixas de cor
+          font: {
+            size: 12, // Tamanho da fonte da legenda
+          },
+        },
+      },
+    },
+    maintainAspectRatio: false, // Permite ajuste flexível
+  };
+  
+  
   return (
     <div className="home">
       {/* Cabeçalho */}
@@ -115,11 +182,11 @@ const Home = () => {
           <div className="finance-info">
             <div className="finance-box green">
               <p>Sua economia mensal:</p>
-              <span>R$ 10.000,00</span>
+              <span>R$ {totalEconomia.toFixed(2)}</span>
             </div>
             <div className="finance-box brown">
               <p>Sua despesa mensal:</p>
-              <span>R$ 10.000,00</span>
+              <span>R$ {totalDespesa.toFixed(2)}</span>
             </div>
           </div>
         </div>
@@ -141,6 +208,41 @@ const Home = () => {
               <span>Metas</span>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="additional-sections">
+        <div className="lista-metas">
+          <h2>Metas</h2>
+          <ul>
+            {metas.map((meta, index) => (
+              <li key={index}>
+                <input
+                  type="checkbox"
+                  id={`meta-${index}`}
+                  name={`meta-${index}`}
+                  style={{ marginRight: '10px' }} // Espaçamento entre o checkbox e o texto
+                />
+                <label htmlFor={`meta-${index}`}>
+                  {meta.data} - {meta.descricao} - R$ {meta.valor ? meta.valor.toFixed(2) : '0.00'}
+                </label>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="lista-economias">
+          <h2>Economia</h2>
+          <ul>
+            {economias.map((economia, index) => (
+              <li key={index}>
+                {economia.data} - R$ {economia.valor.toFixed(2)}
+              </li>
+            ))}
+          </ul>
+          </div>
+        <div className="grafico-despesas">
+          <h2>Gráfico de Despesas</h2>
+          <Pie data={dataGrafico} options={optionsGrafico} />
         </div>
       </div>
 
@@ -199,7 +301,9 @@ const Home = () => {
                 <option value="5">Impostos</option>
                 <option value="6">Manutenção do veículo</option>
                 <option value="7">Doações</option>
-                <option value="8">Outros</option>
+                <option value="8">Salário</option>
+                <option value="9">Presente</option>
+                <option value="10">Outros</option>
               </select>
             </div>
             <button className="confirm-button" onClick={handleSubmit}>✔️</button>
