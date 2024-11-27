@@ -58,11 +58,11 @@ const Login = () => {
               />
             </div>
             <div className="input-a">
-              <label htmlFor="senha">Senha</label> {/* Altere "password" para "senha" */}
+              <label htmlFor="senha">Senha</label> {}
               <input
                 type="password"
                 id="senha"
-                name="senha" // Certifique-se de que o name corresponde ao backend
+                name="senha" 
                 value={formData.senha}
                 onChange={handleChange}
                 required
